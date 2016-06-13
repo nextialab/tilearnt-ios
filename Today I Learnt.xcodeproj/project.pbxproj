@@ -14,6 +14,9 @@
 		8E01EAE41CC4B11F00B13626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E01EAE21CC4B11F00B13626 /* LaunchScreen.storyboard */; };
 		8E01EAEF1CC4B11F00B13626 /* Today_I_LearntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01EAEE1CC4B11F00B13626 /* Today_I_LearntTests.swift */; };
 		8E01EAFA1CC4B11F00B13626 /* Today_I_LearntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01EAF91CC4B11F00B13626 /* Today_I_LearntUITests.swift */; };
+		8E1747461CDBFA8D005835E4 /* KnowledgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1747451CDBFA8D005835E4 /* KnowledgeTableViewCell.swift */; };
+		8E2D1C671D0F61EB00B304DA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D1C661D0F61EB00B304DA /* CoreData.framework */; };
+		8E2D1C6A1D0F630400B304DA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D1C681D0F630400B304DA /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		8E01EAF51CC4B11F00B13626 /* Today I LearntUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Today I LearntUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E01EAF91CC4B11F00B13626 /* Today_I_LearntUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_I_LearntUITests.swift; sourceTree = "<group>"; };
 		8E01EAFB1CC4B11F00B13626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E1747451CDBFA8D005835E4 /* KnowledgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeTableViewCell.swift; sourceTree = "<group>"; };
+		8E2D1C661D0F61EB00B304DA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8E2D1C691D0F630400B304DA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E2D1C671D0F61EB00B304DA /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +84,7 @@
 		8E01EACD1CC4B11F00B13626 = {
 			isa = PBXGroup;
 			children = (
+				8E2D1C661D0F61EB00B304DA /* CoreData.framework */,
 				8E01EAD81CC4B11F00B13626 /* Today I Learnt */,
 				8E01EAED1CC4B11F00B13626 /* Today I LearntTests */,
 				8E01EAF81CC4B11F00B13626 /* Today I LearntUITests */,
@@ -103,6 +111,8 @@
 				8E01EAE01CC4B11F00B13626 /* Assets.xcassets */,
 				8E01EAE21CC4B11F00B13626 /* LaunchScreen.storyboard */,
 				8E01EAE51CC4B11F00B13626 /* Info.plist */,
+				8E1747451CDBFA8D005835E4 /* KnowledgeTableViewCell.swift */,
+				8E2D1C681D0F630400B304DA /* Model.xcdatamodeld */,
 			);
 			path = "Today I Learnt";
 			sourceTree = "<group>";
@@ -256,8 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E1747461CDBFA8D005835E4 /* KnowledgeTableViewCell.swift in Sources */,
 				8E01EADC1CC4B11F00B13626 /* ViewController.swift in Sources */,
 				8E01EADA1CC4B11F00B13626 /* AppDelegate.swift in Sources */,
+				8E2D1C6A1D0F630400B304DA /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +496,7 @@
 				8E01EB001CC4B11F00B13626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E01EB011CC4B11F00B13626 /* Build configuration list for PBXNativeTarget "Today I LearntTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +505,7 @@
 				8E01EB031CC4B11F00B13626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E01EB041CC4B11F00B13626 /* Build configuration list for PBXNativeTarget "Today I LearntUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,8 +514,22 @@
 				8E01EB061CC4B11F00B13626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8E2D1C681D0F630400B304DA /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8E2D1C691D0F630400B304DA /* Model.xcdatamodel */,
+			);
+			currentVersion = 8E2D1C691D0F630400B304DA /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8E01EACE1CC4B11F00B13626 /* Project object */;
 }
