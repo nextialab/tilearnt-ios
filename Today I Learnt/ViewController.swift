@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Knowledge")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         do {
             let results = try managedContext.executeFetchRequest(fetchRequest)
             knowledge = results as! [NSManagedObject]
@@ -65,10 +66,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let managedContext = appDelegate.managedObjectContext
         let entity = NSEntityDescription.entityForName("Knowledge", inManagedObjectContext: managedContext)
         let entityKnowledge = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        let today = NSDate()
         entityKnowledge.setValue(newKnowledge, forKey: "text")
+        entityKnowledge.setValue(today, forKey: "date")
         do {
             try managedContext.save()
-            knowledge.append(entityKnowledge)
+            //knowledge.append(entityKnowledge)
+            knowledge.insert(entityKnowledge, atIndex: 0)
             table.reloadData()
         } catch let error as NSError {
             print("Could not save \(error), \(error.userInfo)")
