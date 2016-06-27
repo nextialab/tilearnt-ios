@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -21,7 +20,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUn-9N-bhN">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="SVy-9g-Pys"/>
+                                    <navigationItem title="Today I Learnt" id="SVy-9g-Pys"/>
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x4N-rv-RBr">
@@ -34,11 +33,11 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzt-fM-YN5">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Local"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-vj-Eya">
                                         <rect key="frame" x="300" y="0.0" width="300" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Global"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -74,19 +73,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lzF-PR-vMm" firstAttribute="width" secondItem="x4N-rv-RBr" secondAttribute="width" id="0PK-SH-3yM"/>
                             <constraint firstItem="hiW-Xl-28b" firstAttribute="top" secondItem="lzF-PR-vMm" secondAttribute="bottom" id="0zj-fd-UKV"/>
+                            <constraint firstItem="dUn-9N-bhN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2FZ-Yn-PDb"/>
                             <constraint firstItem="x4N-rv-RBr" firstAttribute="top" secondItem="dUn-9N-bhN" secondAttribute="bottom" id="2cV-dY-vmR"/>
+                            <constraint firstItem="lzF-PR-vMm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4gt-rT-XMG"/>
+                            <constraint firstItem="x4N-rv-RBr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5rN-vJ-jGV"/>
                             <constraint firstItem="xhh-Rz-o8O" firstAttribute="top" secondItem="hiW-Xl-28b" secondAttribute="bottom" id="8bW-0q-mHe"/>
-                            <constraint firstItem="hiW-Xl-28b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Bwk-O6-dRh"/>
-                            <constraint firstItem="dUn-9N-bhN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="E0v-n9-mJe"/>
+                            <constraint firstItem="hiW-Xl-28b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fdl-i1-bt5"/>
                             <constraint firstItem="dUn-9N-bhN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Pwe-9R-fuI"/>
                             <constraint firstItem="dUn-9N-bhN" firstAttribute="top" secondItem="N5E-hM-alS" secondAttribute="bottom" id="VSq-Xc-07s"/>
-                            <constraint firstItem="hiW-Xl-28b" firstAttribute="width" secondItem="lzF-PR-vMm" secondAttribute="width" id="Vnx-Ty-xRR"/>
-                            <constraint firstItem="lzF-PR-vMm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="iSQ-I6-JrQ"/>
+                            <constraint firstItem="hiW-Xl-28b" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bwn-sb-qGg"/>
                             <constraint firstItem="lzF-PR-vMm" firstAttribute="top" secondItem="x4N-rv-RBr" secondAttribute="bottom" id="msA-Zu-GYw"/>
-                            <constraint firstItem="x4N-rv-RBr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="nXS-dp-rPn"/>
-                            <constraint firstItem="x4N-rv-RBr" firstAttribute="width" secondItem="dUn-9N-bhN" secondAttribute="width" id="sac-5j-tuE"/>
+                            <constraint firstItem="lzF-PR-vMm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qde-zl-nfC"/>
+                            <constraint firstItem="x4N-rv-RBr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xUv-N8-f3c"/>
                         </constraints>
                     </view>
                     <connections>
