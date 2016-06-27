@@ -69,6 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let today = NSDate()
         entityKnowledge.setValue(newKnowledge, forKey: "text")
         entityKnowledge.setValue(today, forKey: "date")
+        entityKnowledge.setValue(false, forKey: "global")
         do {
             try managedContext.save()
             //knowledge.append(entityKnowledge)
