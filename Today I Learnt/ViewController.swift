@@ -57,18 +57,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        return [UITableViewRowAction(style: .Default, title: "Publish", handler: {
-            action, indexPath in
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                let managedContext = appDelegate.managedObjectContext
-                self.knowledge[indexPath.item].setValue(true, forKey: "global")
-                do {
-                    try managedContext.save()
-                } catch let error as NSError {
-                    print("Could not save \(error), \(error.userInfo)")
+        return [UITableViewRowAction(style: .Default, title: "Publish", handler: { action, indexPath in
+            let globalKnowledge = self.knowledge[indexPath.item].valueForKey("text") as! String
+            KnowledgeInterface.postKnowledge(globalKnowledge, handler: { data, response, error in
+                if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode == 200 {
+                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                    let managedContext = appDelegate.managedObjectContext
+                    self.knowledge[indexPath.item].setValue(true, forKey: "global")
+                    do {
+                        try managedContext.save()
+                    } catch let error as NSError {
+                        print("Could not save \(error), \(error.userInfo)")
+                    }
+                } else {
+                    print("Error posting: \(response)")
                 }
-                tableView.editing = false
-                tableView.reloadData()
+                dispatch_async(dispatch_get_main_queue(), {
+                    tableView.editing = false
+                    tableView.reloadData()
+                })
+            })
+            
         })]
     }
     
