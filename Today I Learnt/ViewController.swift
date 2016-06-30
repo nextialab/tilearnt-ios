@@ -33,6 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         table.dataSource = self
+        table.delegate = self
         edit.delegate = self
     }
 
@@ -50,6 +51,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return false
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        let published = knowledge[indexPath.item].valueForKey("global") as! Bool
+        return !published
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        return [UITableViewRowAction(style: .Default, title: "Publish", handler: {
+            action, indexPath in
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let managedContext = appDelegate.managedObjectContext
+                self.knowledge[indexPath.item].setValue(true, forKey: "global")
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save \(error), \(error.userInfo)")
+                }
+                tableView.editing = false
+                tableView.reloadData()
+        })]
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return knowledge.count
     }
@@ -58,6 +80,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cellIdentifier = "KnowledgeTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! KnowledgeTableViewCell
         cell.label.text = (knowledge[indexPath.item].valueForKey("text") as! String)
+        let published = knowledge[indexPath.item].valueForKey("global") as! Bool
+        cell.published.alpha = published ? 1.0 : 0.0
         return cell
     }
 
@@ -72,7 +96,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         entityKnowledge.setValue(false, forKey: "global")
         do {
             try managedContext.save()
-            //knowledge.append(entityKnowledge)
             knowledge.insert(entityKnowledge, atIndex: 0)
             table.reloadData()
         } catch let error as NSError {
