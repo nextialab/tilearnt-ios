@@ -39,6 +39,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-vj-Eya">
                                         <rect key="frame" x="300" y="0.0" width="300" height="30"/>
                                         <state key="normal" title="Global"/>
+                                        <connections>
+                                            <action selector="loadFromCloud:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crd-0s-Mm3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

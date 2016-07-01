@@ -12,6 +12,12 @@ class KnowledgeInterface: NSObject {
 
     static let sURL = "http://localhost:9000"
     
+    static func getKnowledges(handler: (NSData?, NSURLResponse?, NSError?) -> Void) {
+        let request = NSMutableURLRequest(URL: NSURL(string: sURL)!)
+        request.HTTPMethod = "GET"
+        (NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: handler)).resume()
+    }
+    
     static func postKnowledge(knowledge: String, handler: (NSData?, NSURLResponse?, NSError?) -> Void) {
         let request = NSMutableURLRequest(URL: NSURL(string: sURL)!)
         request.HTTPMethod = "POST"
