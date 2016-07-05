@@ -11,7 +11,7 @@ import UIKit
 class KnowledgeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var published: UIImageView!
+    @IBOutlet weak var published: UIImageView?
     
     override func awakeFromNib() {
         super.awakeFromNib()

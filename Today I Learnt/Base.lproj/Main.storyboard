@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="94" width="600" height="457"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="KnowledgeTableViewCell" id="b6e-0b-Xqd" customClass="KnowledgeTableViewCell" customModule="Today_I_Learnt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocalKnowledge" id="b6e-0b-Xqd" customClass="KnowledgeTableViewCell" customModule="Today_I_Learnt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b6e-0b-Xqd" id="jph-W2-ElZ">
@@ -118,7 +118,7 @@
         <!--Item-->
         <scene sceneID="7oL-h3-Aob">
             <objects>
-                <viewController id="sKk-Vp-POt" sceneMemberID="viewController">
+                <viewController id="sKk-Vp-POt" customClass="CloudViewController" customModule="Today_I_Learnt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g9V-Lp-sz8"/>
                         <viewControllerLayoutGuide type="bottom" id="WUo-xS-5gU"/>
@@ -131,7 +131,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="j89-9J-XiW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CloudKnowledge" id="j89-9J-XiW" customClass="KnowledgeTableViewCell" customModule="Today_I_Learnt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j89-9J-XiW" id="4ES-WG-KB4">
@@ -146,6 +146,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="lBT-Wc-Hhm" id="E1j-IW-rxy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -159,6 +162,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ent-ah-5Q9"/>
+                    <connections>
+                        <outlet property="table" destination="dI9-K1-TbW" id="Vk1-P1-rGm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36a-ur-4WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
