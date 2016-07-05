@@ -35,7 +35,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func loadFromCloud(sender: AnyObject) {
+    func loadFromCloud(sender: AnyObject) {
         KnowledgeInterface.getKnowledges({ data, response, error in
             self.fromDisk = false
             if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode == 200 {

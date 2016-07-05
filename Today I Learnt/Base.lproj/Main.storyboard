@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ql3-FA-q8T">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Today_I_Learnt" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,28 +29,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzF-PR-vMm">
-                                <rect key="frame" x="0.0" y="94" width="600" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzt-fM-YN5">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
-                                        <state key="normal" title="Local"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-vj-Eya">
-                                        <rect key="frame" x="300" y="0.0" width="300" height="30"/>
-                                        <state key="normal" title="Global"/>
-                                        <connections>
-                                            <action selector="loadFromCloud:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crd-0s-Mm3"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="A14-vj-Eya" firstAttribute="width" secondItem="pzt-fM-YN5" secondAttribute="width" id="8CK-IU-gQh"/>
-                                    <constraint firstItem="pzt-fM-YN5" firstAttribute="leading" secondItem="lzF-PR-vMm" secondAttribute="leading" id="deH-Et-2p1"/>
-                                </constraints>
-                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hiW-Xl-28b">
-                                <rect key="frame" x="0.0" y="124" width="600" height="476"/>
+                                <rect key="frame" x="0.0" y="94" width="600" height="457"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="KnowledgeTableViewCell" id="b6e-0b-Xqd" customClass="KnowledgeTableViewCell" customModule="Today_I_Learnt" customModuleProvider="target">
@@ -95,21 +75,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hiW-Xl-28b" firstAttribute="top" secondItem="lzF-PR-vMm" secondAttribute="bottom" id="0zj-fd-UKV"/>
                             <constraint firstItem="dUn-9N-bhN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2FZ-Yn-PDb"/>
                             <constraint firstItem="x4N-rv-RBr" firstAttribute="top" secondItem="dUn-9N-bhN" secondAttribute="bottom" id="2cV-dY-vmR"/>
-                            <constraint firstItem="lzF-PR-vMm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4gt-rT-XMG"/>
                             <constraint firstItem="x4N-rv-RBr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5rN-vJ-jGV"/>
                             <constraint firstItem="xhh-Rz-o8O" firstAttribute="top" secondItem="hiW-Xl-28b" secondAttribute="bottom" id="8bW-0q-mHe"/>
                             <constraint firstItem="hiW-Xl-28b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fdl-i1-bt5"/>
                             <constraint firstItem="dUn-9N-bhN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Pwe-9R-fuI"/>
                             <constraint firstItem="dUn-9N-bhN" firstAttribute="top" secondItem="N5E-hM-alS" secondAttribute="bottom" id="VSq-Xc-07s"/>
+                            <constraint firstItem="hiW-Xl-28b" firstAttribute="top" secondItem="x4N-rv-RBr" secondAttribute="bottom" id="Yko-l9-UC8"/>
                             <constraint firstItem="hiW-Xl-28b" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bwn-sb-qGg"/>
-                            <constraint firstItem="lzF-PR-vMm" firstAttribute="top" secondItem="x4N-rv-RBr" secondAttribute="bottom" id="msA-Zu-GYw"/>
-                            <constraint firstItem="lzF-PR-vMm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qde-zl-nfC"/>
                             <constraint firstItem="x4N-rv-RBr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xUv-N8-f3c"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="i24-HN-vtZ"/>
                     <connections>
                         <outlet property="edit" destination="x4N-rv-RBr" id="gSN-7x-khu"/>
                         <outlet property="table" destination="hiW-Xl-28b" id="naj-Gv-geH"/>
@@ -117,7 +95,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1056" y="-78"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QmL-Li-eiQ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ql3-FA-q8T" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="9jd-o3-qj9">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="69F-ZE-1fb"/>
+                        <segue destination="sKk-Vp-POt" kind="relationship" relationship="viewControllers" id="zv9-Ae-PBE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ts9-Za-kvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="244" y="336"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="7oL-h3-Aob">
+            <objects>
+                <viewController id="sKk-Vp-POt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g9V-Lp-sz8"/>
+                        <viewControllerLayoutGuide type="bottom" id="WUo-xS-5gU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XMo-kO-3lp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ent-ah-5Q9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36a-ur-4WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056" y="674"/>
         </scene>
     </scenes>
     <resources>
