@@ -6,7 +6,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Local-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LocalViewController" customModule="Today_I_Learnt" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,7 +87,7 @@
                             <constraint firstItem="x4N-rv-RBr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xUv-N8-f3c"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="i24-HN-vtZ"/>
+                    <tabBarItem key="tabBarItem" title="Local" image="smartphone" selectedImage="smartphone" id="i24-HN-vtZ"/>
                     <connections>
                         <outlet property="edit" destination="x4N-rv-RBr" id="gSN-7x-khu"/>
                         <outlet property="table" destination="hiW-Xl-28b" id="naj-Gv-geH"/>
@@ -115,7 +115,7 @@
             </objects>
             <point key="canvasLocation" x="244" y="336"/>
         </scene>
-        <!--Item-->
+        <!--Cloud-->
         <scene sceneID="7oL-h3-Aob">
             <objects>
                 <viewController id="sKk-Vp-POt" customClass="CloudViewController" customModule="Today_I_Learnt" customModuleProvider="target" sceneMemberID="viewController">
@@ -128,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dI9-K1-TbW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CloudKnowledge" id="j89-9J-XiW" customClass="KnowledgeTableViewCell" customModule="Today_I_Learnt" customModuleProvider="target">
@@ -139,7 +139,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBT-Wc-Hhm">
-                                                    <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="8" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -152,26 +152,37 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCL-Kn-ISp">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Today I Learnt" id="gyB-ob-Jhb"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GCL-Kn-ISp" firstAttribute="top" secondItem="g9V-Lp-sz8" secondAttribute="bottom" id="4CL-DJ-SRo"/>
                             <constraint firstItem="WUo-xS-5gU" firstAttribute="top" secondItem="dI9-K1-TbW" secondAttribute="bottom" id="9FZ-Me-fkH"/>
                             <constraint firstItem="dI9-K1-TbW" firstAttribute="width" secondItem="XMo-kO-3lp" secondAttribute="width" id="RNF-q0-mxx"/>
-                            <constraint firstItem="dI9-K1-TbW" firstAttribute="top" secondItem="g9V-Lp-sz8" secondAttribute="bottom" constant="-20" id="Yu5-dD-3MK"/>
+                            <constraint firstItem="GCL-Kn-ISp" firstAttribute="width" secondItem="XMo-kO-3lp" secondAttribute="width" id="TU4-nN-lTv"/>
+                            <constraint firstItem="GCL-Kn-ISp" firstAttribute="centerX" secondItem="XMo-kO-3lp" secondAttribute="centerX" id="YD3-iE-Fvj"/>
+                            <constraint firstItem="GCL-Kn-ISp" firstAttribute="top" secondItem="g9V-Lp-sz8" secondAttribute="bottom" id="bkA-Hq-jos"/>
                             <constraint firstItem="dI9-K1-TbW" firstAttribute="centerX" secondItem="XMo-kO-3lp" secondAttribute="centerX" id="m0v-Ue-Pt2"/>
+                            <constraint firstItem="dI9-K1-TbW" firstAttribute="top" secondItem="GCL-Kn-ISp" secondAttribute="bottom" id="t6b-dW-gkV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ent-ah-5Q9"/>
+                    <tabBarItem key="tabBarItem" title="Cloud" image="cloud" selectedImage="cloud" id="ent-ah-5Q9"/>
                     <connections>
                         <outlet property="table" destination="dI9-K1-TbW" id="Vk1-P1-rGm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36a-ur-4WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056" y="674"/>
+            <point key="canvasLocation" x="1056" y="690"/>
         </scene>
     </scenes>
     <resources>
         <image name="cloud" width="48" height="48"/>
+        <image name="smartphone" width="48" height="48"/>
     </resources>
 </document>
