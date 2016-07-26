@@ -20,6 +20,15 @@ class LocalViewController: UIViewController, UITableViewDataSource, UITableViewD
         loadFromDisk()
     }
     
+    /**
+     Load pieces of knowledge from the local data store. The pieces area loaded in descendant order by dateThese pieces are loaded as NSManagedObject with the format:
+     
+     date: Date
+     
+     global: Boolean
+     
+     text: String
+    */
     func loadFromDisk() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -99,7 +108,12 @@ class LocalViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         return cell
     }
-
+    
+    /**
+     Add a new piece of knowledge to the local data store, and then reloads the table view data. The new piece is added at the beginning of the list to keep the descendant order by date.
+     - Parameters:
+        - newKnowledge: text for the new piece of knowledge
+     */
     func addKnowledge(newKnowledge: String) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext

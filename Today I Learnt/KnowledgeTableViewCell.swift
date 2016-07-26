@@ -10,7 +10,13 @@ import UIKit
 
 class KnowledgeTableViewCell: UITableViewCell {
 
+    /**
+     UI Label where the text of a piece of knowledge will be printed
+     */
     @IBOutlet weak var label: UILabel!
+    /**
+     This Image View is shown when the piece of knowledge is already in sync with the cloud
+     */
     @IBOutlet weak var published: UIImageView?
     
     override func awakeFromNib() {

@@ -10,7 +10,13 @@ import UIKit
 
 class KnowledgeModel: NSObject {
 
+    /**
+     Contains the text of a piece of knowledge
+     */
     var text: String
+    /**
+     If true then the piece of knowledge is in sync with the cloud
+     */
     var published: Bool
     
     init(text: String?, published: Bool) {

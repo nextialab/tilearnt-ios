@@ -26,6 +26,9 @@ class CloudViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
 
+    /**
+     Load pieces of knowledge from the cloud. It also converts the json response to KnowledgeModel objects
+     */
     func loadFromCloud() {
         KnowledgeInterface.getKnowledges({ data, response, error in
             if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode == 200 {
